@@ -1,7 +1,146 @@
 body,
 html {
-  /* height:100%; */
+    margin: 0px;
+    padding: 0px;
+}
 
-  margin: 0px;
-  padding: 0px;
+#app {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+/* Header layout: store name on left, navigation on right */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+/* Remove default margin from the store title */
+header h1 {
+    margin: 0;
+}
+/* Display navigation links in one horizontal row */
+nav ul {
+    display: flex;
+    gap: 20px;
+    /* Remove default list styling and spacing */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main store layout: 4 items per row */
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    padding-bottom: 30px;
+
+    /* Keep everything within the browser width */
+    box-sizing: border-box;
+}
+
+/* Individual store item */
+.store-item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Image, title, description, rating/price/stock */
+    grid-template-rows: 200px auto 1fr auto;
+
+    gap: 10px;
+    height: 400px;
+
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-sizing: border-box;
+
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Product image */
+.store-item img {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* Product name and description use the full card width */
+.store-item p {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+/* Make product name stand out */
+.store-item p:first-of-type {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Product description */
+.store-item p:nth-of-type(2) {
+    font-size: 14px;
+}
+
+/* Rating, price, and stock stay on the same bottom row */
+.store-item span {
+    text-align: center;
+    align-self: end;
+}
+
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Give the header a cleaner appearance */
+header {
+    background-color: #222;
+    color: white;
+}
+
+/* Style navigation links */
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Add an underline when hovering over navigation links */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Give all store items the same height */
+.store-item {
+    height: 380px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Make the product name stand out */
+.store-item p:first-of-type {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Product description */
+.store-item p:nth-of-type(2) {
+    font-size: 14px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+    color: white;
 }
